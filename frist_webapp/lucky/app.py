@@ -1,5 +1,5 @@
 # streamlit 라이브러리 호출
-import streamlit as streamlit
+import streamlit as st
 import numpy as numpy
 
 # https://docs.streamlit.io/library/get-started/main-concepts
@@ -14,7 +14,10 @@ colunbs = st.colums(4)
 # 가로 4개의 열 - > columns = [col1, col2, col3, col4]
 # col1, col2, col3, col4
 for idx, c in enumerate(columns):
-    st.text_input("조 추첨 대상")
+    # col.text_input(f"조 추첨 대상 {idx+1}", key=idx)
+    for idx2 in range(4):
+        # key가 겹치면 안 됨
+        col.text_input(f"조 추첨 대상 {idx+1 + idx2 * 4}", key=f"{idx+1 + idx2 * 4}")
 # 13명이 소속될 조 이름을 넣을 위치
 
 # <추첨 버튼>
