@@ -44,8 +44,8 @@ for idx, col in enumerate(columns2): # 열의 위치
         col.text_input(
             f"조 목록 {idx+1 + idx2 * 4}",
             key=f"g{idx+1 + idx2 * 4}" # n -> g => 겹치지 말라고
-        ) # 4번 호출됨'
-        
+        ) # 4번 호출됨
+
 # 13명이 소속될 조 이름을 넣을 위치
 st.write(st.session_state)
    # np.random.choice -> 추출해서 이름들, 목록
