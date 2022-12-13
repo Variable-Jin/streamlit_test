@@ -8,5 +8,7 @@ st.write(
 )
 
 df = pd.read_csv('./criminal/crime.csv', encoding='CP949')
+criminal = sns.load_dataset('criminal')
+st.write(criminal) # 적당히 짤라줌
 st.write(df)
 
