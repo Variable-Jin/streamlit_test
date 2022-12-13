@@ -35,7 +35,7 @@ columns = tabs[1].columns(4) # 화면을 열로 나누어서 배치
 # enumerate : index, value 묶음
 # columns -> columns2
 for idx, col in enumerate(columns):  # 열의 위치
-    # col.text_input(f"조 추첨 대상 {idx+1}", key=idx)
+    # col.text_input(f"조 목록 {idx+1}", key=idx)
     for idx2 in range(4):
         # key가 겹치면 안 됨
         # col 안에 메소드를 통해서 요소들을 생성해주겠다
