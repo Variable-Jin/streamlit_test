@@ -13,3 +13,5 @@ st.write(df)
 fig = plt.figure(figsize=(10,7))
 sns.histplot(data=df, x='호선', hue='조사일자', bin=10)
 st.pyplot(fig)
+
+sns.displot(data=df, x='호선', kind='kde')
