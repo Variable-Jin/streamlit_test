@@ -9,3 +9,7 @@ st.write(
 )
 df = pd.read_csv('./subway/ssubway.csv', encoding='CP949')
 st.write(df)
+
+fig = plt.figure(figsize=(10,7))
+sns.histplot(data=df, x='호선')
+st.pyplot(fig)
