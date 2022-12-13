@@ -77,10 +77,4 @@ if st.button('추첨 시작!'):
     # st.balloons()
     st.snow()
     st.write(df)
-# 2. df 형태로 정리
-df = pd.DataFrame({
-    "추첨 대상자 이름": n_rd,
-    "조 이름": g_rd,
-})
-st.balloons()
-st.write(df)
+
