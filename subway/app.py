@@ -7,5 +7,5 @@ import seaborn as sns
 st.write(
    "https://www.data.go.kr/data/15081069/fileData.do"
 )
-df = pd.read_csv('./corona/bcorona.csv', encoding='CP949')
+df = pd.read_csv('./subway/ssubway.csv', encoding='CP949')
 st.write(df)
