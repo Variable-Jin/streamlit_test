@@ -8,7 +8,17 @@ st.write(
 )
 
 df = pd.read_csv('./criminal/crime.csv', encoding='CP949')
-crime = sns.load_dataset('crime')
-st.write(crime) # 적당히 짤라줌
+fig = plt.figure(figsize=(10,4))
+sns.histplot(data=df, x='발생건수(건)')
+st.pyplot(fig)
+
+fig = plt.figure(figsize=(10,4))
+sns.histplot(data=df, x='발생건수(건)', bins=10)
+st.pyplot(fig)
+
+
+fig = plt.figure(figsize=(10,4))
+sns.kdeplot(data=df, x='발생건수(건)')
+st.pyplot(fig)
 st.write(df)
 
