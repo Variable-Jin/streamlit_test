@@ -11,6 +11,7 @@ st.header("여러분의 참여를 환영합니다!")
 # 3 x 4 (row, col)
 # 열을 배치하는 메소드
 colunbs = st.colums(4)
+# 가로 4개의 열 - > columns = [col1, col2, col3, col4]
 # col1, col2, col3, col4
 for idx, c in enumerate(columns):
     st.text_input("조 추첨 대상")
