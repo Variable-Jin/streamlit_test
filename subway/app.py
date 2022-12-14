@@ -54,7 +54,7 @@ zp = fp.fillna(0)
 
 # df7 = px.data.df()
 fig7 = px.density_heatmap(df, x='호선', y="5시30분", marginal_x="rug", marginal_y="histogram")
-fig = px.imshow(airtemps.T, color_continuous_scale='RdBu_r', origin='lower')
+fig7 = px.imshow(airtemps.T, color_continuous_scale='RdBu_r', origin='lower')
 tab2.plotly_chart(fig7)
 
 fig8 = px.density_heatmap(df, x='호선', y="6시30분", marginal_x="rug", marginal_y="histogram" )
