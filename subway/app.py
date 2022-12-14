@@ -4,36 +4,27 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
 st.write(
-   "https://www.naver.com/"
+   "https://www.data.go.kr/data/15081069/fileData.do"
 )
-df = pd.read_csv('./subway/ssubway.csv', encoding='CP949')
+df = pd.read_csv('./cafe/cafe.csv', encoding='CP949')
 st.write(df)
 
-df2 = pd.read_csv('./subway/subway_part.csv')
-st.write(df2)
+from glob import glob
 
+file_names = glob('./cafe/cafe.csv')
+total = pd.DataFrame()
 
-df3 = pd.read_csv('./subway/subway.csv', encoding='CP949')
-st.write(df3)
+for file_name in file_names:
+   temp = pd.read_csv(file_name, encoding='cp949')
+   total = pd.concat([total, temp])
 
-fig = plt.figure(figsize=(10,4))
-sns.histplot(data=df, x='호선', hue='조사일자', multiple='stack')
-st.pyplot(fig)
+total.reset_index(inplace=True, drop=True)
+st.write(total)
 
-fig2 = plt.figure(figsize=(10,4))
-sns.kdeplot(data=df, x='호선')
-sns.rugplot(data=df, x='호선')
+df.pivot_table(index='호선', columns='구분', values='5시30분', aggfunc='sum')
+fp = df.pivot_table(index='호선', columns='구분', values='5시30분', aggfunc='sum')
+zp = fp.fillna(0)
+zp
 
-st.pyplot(fig2)
-
-fig3 = plt.figure(figsize=(10,4))
-sns.kdeplot(data=df, x='호선', hue='조사일자', multiple='stack')
-st.pyplot(fig3)
-
-fig4 = plt.figure(figsize=(10,4))
-sns.displot(data=df, x='구분')
-st.pyplot(fig4)
-
-df3[df3['호선'] == 1]
+sns.heatmap(data=zp)
