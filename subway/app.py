@@ -23,9 +23,18 @@ fig3 = plt.figure(figsize=(10,4))
 sns.kdeplot(data=df, x='호선', hue='조사일자', multiple='stack')
 st.pyplot(fig3)
 
+x = [10, 60, 30] # 범주형 데이터별 파이 그래프의 비율
+labels = ['A', 'B', 'C']
+fig5 = plt.figure(figsize=(10, 4))
+plt.pie(x=x, labels=labels, autopct='%.1f%%')
+st.pyplot(fig5)
+
+fig = px.histogram(df, x='호선',title='호선별 이용자수' )
+st.plotly_chart(fig)
+
 df.pivot_table(index='호선', columns='구분', values='5시30분', aggfunc='sum')
 fp = df.pivot_table(index='호선', columns='구분', values='5시30분', aggfunc='sum')
 zp = fp.fillna(0)
 zp
 
-sns.heatmap(data=df)
+sns.heatmap(data=zp)
