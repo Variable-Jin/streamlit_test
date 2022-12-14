@@ -11,7 +11,7 @@ st.write(
 df = pd.read_csv('./subway/ssubway.csv', encoding='CP949')
 st.write(df)
 
-df2 = pd.read_csv('./subway/ssubway_part.csv')
+df2 = pd.read_csv('./subway/subway_part.csv')
 st.write(df2)
 
 
