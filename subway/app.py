@@ -15,6 +15,9 @@ df2 = pd.read_csv('./subway/subway_part.csv')
 st.write(df2)
 
 
+df3 = pd.read_csv('./subway/subway.csv')
+st.write(df3)
+
 fig = plt.figure(figsize=(10,4))
 sns.histplot(data=df, x='호선', hue='조사일자', multiple='stack')
 st.pyplot(fig)
@@ -33,4 +36,4 @@ fig4 = plt.figure(figsize=(10,4))
 sns.displot(data=df, x='구분')
 st.pyplot(fig4)
 
-df[df['호선'] == 1]
+df3[df3['호선'] == 1]
