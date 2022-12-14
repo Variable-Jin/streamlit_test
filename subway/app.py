@@ -33,3 +33,4 @@ fig4 = plt.figure(figsize=(10,4))
 sns.displot(data=df, x='구분')
 st.pyplot(fig4)
 
+df[df['호선'] == 1]
