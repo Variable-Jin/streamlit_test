@@ -4,7 +4,7 @@ import pandas as pd
 df = pd.read_csv('https://raw.githubusercontent.com/bigdata-young/ai_26th/main/data/insurance.csv')
 st.write(df)
 
-import joblib
+import joblib # 사이킷런 import 안해도 model 객체 지향
 import os
 # os.path.. 파이썬 경로문제
 model_path = f"{os.path.dirname(os.path.abspath(__file__))}/model.pkl"
@@ -62,4 +62,15 @@ st.write(st.session_state['smoker'])
 st.selectbox (
     label="지역",
     options=["북동", "북서", "남동", "남서"],
+
 )
+#st.write
+
+if st.button('예측':)
+    st.balloons()
+    # 예측
+    # model.predict(X_test) -> 전처리한 데이터 형태로 들어간 행렬, df.
+    # df x -> 이중 리스트 ([])
+    # [[age, bmi, children, smoker, sex_male, s]
+
+    ]
