@@ -40,3 +40,26 @@ st.number_input(
     key='bmi'
 )
 st.write(st.session_state['bmi'])
+
+# children : 자녀 수
+children = st.number_input(
+    label="자녀 수"
+    step=1,
+    value=30,
+    key='children'
+)
+st.write(st.session_state['children'])
+
+# smoker : 흡연여부
+st.checkbox(
+    label='흡연여부'
+    value=False
+    key='smoker'
+)
+st.write(st.session_state['smoker'])
+
+# region : 지역
+st.selectbox (
+    label="지역",
+    options=["북동", "북서", "남동", "남서"],
+)
